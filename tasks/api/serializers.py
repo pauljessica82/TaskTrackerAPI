@@ -10,6 +10,8 @@ from tasks.models import Task
 
 
 class TaskSerializer(HyperlinkedModelSerializer):
+    url = HyperlinkedIdentityField(view_name="task-detail")
+
     class Meta:
         model = Task
         fields = [
@@ -17,4 +19,5 @@ class TaskSerializer(HyperlinkedModelSerializer):
             'name',
             'day',
             'reminder',
+            'url',
         ]

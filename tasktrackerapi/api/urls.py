@@ -4,5 +4,5 @@ from .views import UserViewSet
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
-router.register(r'tasks', TaskViewSet, basename='post')
+router.register(r'tasks', TaskViewSet)
 
