@@ -1,3 +1,11 @@
 from django.shortcuts import render
+from .models import Task
 
-# Create your views here.
+from django.views.generic.edit import CreateView
+from django.contrib.messages.views import SuccessMessageMixin
+
+
+class TaskCreateView(CreateView):
+    model = Task
+    fields = ['text', 'day', 'reminder']
+    SuccessMessageMixin.success_message = "Task Saved"
