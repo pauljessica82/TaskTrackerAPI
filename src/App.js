@@ -6,6 +6,9 @@ import Tasks from './components/Tasks'
 import AddTask from './components/AddTask'
 import Footer from './components/Footer'
 import About from './components/About'
+import { API, detailRoute } from './config'
+
+
 
 
 const App = () => {
@@ -24,7 +27,7 @@ const App = () => {
 
 	//Fetch task
 	const fetchTasks = async () => {
-			const res = await fetch('http://localhost:5000/tasks')
+			const res = await fetch(API.BASE_API)
 			const data = await res.json()
 
 			return data
@@ -32,7 +35,8 @@ const App = () => {
 
 	//Fetch task with id 
 	const fetchTask = async (id) => {
-		const res = await fetch(`http://localhost:5000/tasks/${id}`)
+
+		const res = await fetch(detailRoute(id))
 		const data = await res.json()
 
 		return data
@@ -40,7 +44,7 @@ const App = () => {
     
 	//Add Task
 	const addTask = async (task) => {
-		const res = await fetch('http://localhost:5000/tasks', {
+		const res = await fetch(API.BASE_API, {
 			method: 'POST',
 			headers: {
 				'Content-type' : 'application/json'
@@ -53,16 +57,12 @@ const App = () => {
 
 		setTasks([...tasks, data])
 
-		//const id = Math.floor(Math.random() * 10000) + 1
-		//const newTask = { id, ...task }
-		//setTasks([...tasks, newTask])
-
 
     }
 
 	// Delete task
 	const deleteTask = async (id) => {
-		await fetch(`http://localhost:5000/tasks/${id}`, {
+		await fetch(detailRoute(id), {
 			method: 'DELETE', 
         })
 		setTasks(tasks.filter((task) => task.id !== id ))}
@@ -74,7 +74,7 @@ const App = () => {
 			...taskToToggle,
 			reminder: !taskToToggle.reminder
 		}
-		const res = await fetch(`http://localhost:5000/tasks/${id}`, {
+		const res = await fetch(detailRoute(id), {
 			method: 'PUT',
 			headers: {
 				'Content-type': 'application/json',
@@ -88,7 +88,8 @@ const App = () => {
 			tasks.map((task) =>
 			task.id === id ?
 			{ ...task, reminder: data.reminder } : task
-		))
+			))
+
 	}
 	return (
 	  <Router>
