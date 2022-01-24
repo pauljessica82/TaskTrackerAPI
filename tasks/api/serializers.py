@@ -7,13 +7,14 @@ from rest_framework.serializers import (
     CurrentUserDefault,
     DateTimeField
 )
+
 from tasks.models import Task
 
 
 class TaskSerializer(HyperlinkedModelSerializer):
     url = HyperlinkedIdentityField(view_name="task-detail")
-    day = DateTimeField()
-    # day = DateTimeField(format="%B %d, %Y %I:%M")
+    # day = DateTimeField()
+    day = DateTimeField(format="%Y-%m-%d %H:%M")
 
     class Meta:
         model = Task
