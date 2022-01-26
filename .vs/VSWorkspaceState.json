@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\tasktrackerapi",
-    "\\tasktrackerapi\\api"
+    "\\src",
+    "\\src\\components"
   ],
+  "SelectedNode": "\\src\\App.js",
   "PreviewInSolutionExplorer": false
 }
