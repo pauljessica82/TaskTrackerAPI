@@ -9,4 +9,5 @@ urlpatterns = [
     path('tasks/', include('tasks.urls')),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 
+
 ]
