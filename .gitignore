@@ -2,6 +2,11 @@
 *.db
 *.xlsx
 *.pyc
+*.bak
+*.dat
+*.dir
+*.dump
+node_modules
 __pycache__
 sqlite
 tasktrackerapi/asgi.py
