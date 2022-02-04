@@ -1,11 +1,12 @@
 import os
+import django_heroku
+import dj_database_url
 
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 DEBUG = os.getenv('TTRACK_DEBUG', 'false').lower() == 'true'
-
 
 SECRET_KEY = os.getenv('TTRACK_SECRET_KEY', 'debug-secret')
 TWILIO_ACCOUNT_SID = os.getenv('TWILIO_ACCOUNT_SID', 'twil-sid' if DEBUG else None)
@@ -15,11 +16,10 @@ TWILIO_MY_PHONE = os.getenv('TWILIO_MY_PHONE', 'twil-phone' if DEBUG else None)
 
 # # SECURITY WARNING: don't run with debug turned on in production!
 #
-ALLOWED_HOSTS = os.getenv('TTRACK_ALLOWED_HOSTS', '*' if DEBUG else '').split()
+ALLOWED_HOSTS = os.getenv('TTRACK_ALLOWED_HOSTS', '*' if DEBUG else '').split(',')
 
 CELERY_BROKER_URL = os.getenv('CELERY_BROKER_URL', 'broker-url' if DEBUG else None)
-CELERY_IMPORTS = ["tasks.celery_tasks"]
-
+CELERY_IMPORTS = ["tasks.celery_tasks", "celery_tasks"]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -31,8 +31,6 @@ INSTALLED_APPS = [
 
     #     my apps
     'tasks',
-
-
 
     # third party apps
     'rest_framework',
@@ -81,9 +79,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+
     }
 }
 
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -141,7 +141,8 @@ REST_FRAMEWORK = {
         'rest_framework_yaml.renderers.YAMLRenderer',
     ],
 
-
 }
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+django_heroku.settings(locals())
