@@ -13,7 +13,7 @@ sqlite
 tasktrackerapi/asgi.py
 db.sqlite3
 db.json
-tasks/migrations/0001_initial.py
+
 
 
 
