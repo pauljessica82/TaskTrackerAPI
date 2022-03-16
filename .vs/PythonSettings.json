@@ -1,4 +1,6 @@
 {
   "TestFramework": "unittest",
-  "Interpreter": "C:\\Users\\paulj\\venv\\django2\\Scripts\\python.exe"
+  "SuppressEnvironmentCreationPrompt": true,
+  "SuppressPackageInstallationPrompt": true,
+  "Interpreter": "Global|VisualStudio|django2 (Python 3.8 (64-bit))"
 }

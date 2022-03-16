@@ -1,0 +1,52 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "python",
+      "interpreter": "(default)",
+      "interpreterArguments": "",
+      "scriptArguments": "",
+      "env": {},
+      "nativeDebug": false,
+      "webBrowserUrl": "",
+      "project": "tasktrackerapi\\api\\serializers.py",
+      "projectTarget": "",
+      "name": "serializers.py"
+    },
+    {
+      "name": "Python: Django",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceRoot}/manage.py",
+      "args": [
+        "runserver"
+      ],
+      "django": true
+    },
+    {
+      "type": "python",
+      "interpreter": "(default)",
+      "interpreterArguments": "",
+      "scriptArguments": "",
+      "env": {},
+      "nativeDebug": false,
+      "webBrowserUrl": "",
+      "project": "tasktrackerapi\\urls.py",
+      "projectTarget": "",
+      "name": "urls.py"
+    },
+    {
+      "type": "python",
+      "interpreter": "(default)",
+      "interpreterArguments": "",
+      "scriptArguments": "runserver",
+      "env": {},
+      "nativeDebug": false,
+      "webBrowserUrl": "",
+      "project": "manage.py",
+      "projectTarget": "",
+      "name": "manage.py"
+    }
+  ]
+}

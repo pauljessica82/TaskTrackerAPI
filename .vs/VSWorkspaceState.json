@@ -1,9 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src",
-    "\\src\\components"
+    "\\frontend",
+    "\\frontend\\task-tracker",
+    "\\frontend\\task-tracker\\public",
+    "\\frontend\\task-tracker\\src"
   ],
-  "SelectedNode": "\\src\\App.js",
+  "SelectedNode": "\\frontend\\task-tracker\\src\\config.js",
   "PreviewInSolutionExplorer": false
 }
