@@ -4,8 +4,6 @@ from django.views.generic import TemplateView
 
 from tasktrackerapi.api.urls import router
 
-from tasks.views import index
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
