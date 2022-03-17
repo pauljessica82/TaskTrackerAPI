@@ -35,7 +35,7 @@ docker-compose.yaml
 /coverage
 
 # production
-/build
+
 
 # misc
 .DS_Store
