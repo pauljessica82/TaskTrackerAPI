@@ -81,11 +81,11 @@ WSGI_APPLICATION = 'tasktrackerapi.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    #
+    # }
 }
 
 # Password validation
@@ -132,6 +132,7 @@ django_heroku.settings(locals())
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:8080",
+    "https://jessiecodes-reminderapp.herokuapp.com/"
 
 ]
 
@@ -157,3 +158,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 prod_db = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(prod_db)
 
+try:
+    from .local_settings import *
+except ImportError:
+    pass
