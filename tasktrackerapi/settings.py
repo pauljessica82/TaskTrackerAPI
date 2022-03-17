@@ -32,6 +32,7 @@ INSTALLED_APPS = [
 
     #     my apps
     'tasks',
+    'tasktrackerapi',
 
     # third party apps
     'rest_framework',
