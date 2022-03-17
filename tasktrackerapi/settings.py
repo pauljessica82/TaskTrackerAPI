@@ -133,7 +133,7 @@ django_heroku.settings(locals())
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:8080",
-    "https://jessiecodes-reminderapp.herokuapp.com/"
+    "https://jessiecodes-reminderapp.herokuapp.com"
 
 ]
 
