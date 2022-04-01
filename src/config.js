@@ -1,7 +1,5 @@
 export const API = {
-    "BASE_API": "http://127.0.0.1:8000/api/tasks/",
-   // "POST": detailRoute
- 
+    "BASE_API": "https://jessiecodes-reminderapp.herokuapp.com/api/tasks/",
 }
 
 export const detailRoute = (id) => {
