@@ -81,8 +81,17 @@ WSGI_APPLICATION = 'tasktrackerapi.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {}
-DATABASES['default'] = dj_database_url.config(conn_max_age=500, ssl_require=True)
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME' : 'dbl3nspms7ag86',
+        'USER': 'nqinuybzpsrxeo',
+        'PASSWORD': '071dd579ea7564a8944a8104b25829b4de8ed370128b5936d4c139c5911258d9',
+        'HOST': 'ec2-34-194-171-47.compute-1.amazonaws.com',
+        'PORT': 5432
+}
+}
+# DATABASES['default'] = dj_database_url.config(conn_max_age=500, ssl_require=True)
 
 
 # Password validation
