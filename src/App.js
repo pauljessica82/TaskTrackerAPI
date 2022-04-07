@@ -6,7 +6,7 @@ import Tasks from './components/Tasks'
 import AddTask from './components/AddTask'
 import Footer from './components/Footer'
 import About from './components/About'
-import { API, detailRoute } from './config'
+import { config, detailRoute } from './config'
 
 
 
@@ -27,7 +27,7 @@ const App = () => {
 
 	//Fetch task
 	const fetchTasks = async () => {
-			const res = await fetch(API.BASE_API)
+			const res = await fetch(config.url.BASE_API)
 			const data = await res.json()
 
 			return data
@@ -44,7 +44,7 @@ const App = () => {
     
 	//Add Task
 	const addTask = async (task) => {
-		const res = await fetch(API.BASE_API, {
+		const res = await fetch(config.url.BASE_API, {
 			method: 'POST',
 			headers: {
 				'Content-type' : 'application/json'
