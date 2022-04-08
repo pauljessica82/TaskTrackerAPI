@@ -17,6 +17,7 @@ db.json
 tasktrackerapi/local_settings.py
 Dockerfile
 docker-compose.yaml
+dumpfile.json
 
 
 
